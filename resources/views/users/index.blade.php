@@ -16,7 +16,6 @@
 </head>
 
 <body>
-    <a href="route{{users.index}}">clicca</a>
 
     <main>
         <div class="container py-4">
