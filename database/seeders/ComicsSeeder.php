@@ -233,7 +233,7 @@ class ComicsSeeder extends Seeder
             $newcomic->title = $comic['title'];
             $newcomic->description = $comic['description'];
             $newcomic->thumb = $comic['thumb'];
-            $newcomic->price = floatval($comic['price']);
+            $newcomic->price = $comic['price'];
             $newcomic->series = $comic['series'];
             $newcomic->sale_date = $comic['sale_date'];
             $newcomic->type = $comic['type'];
