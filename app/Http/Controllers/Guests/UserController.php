@@ -11,6 +11,6 @@ class UserController extends Controller
     public function index()
     {
         $comics = Comic::all();
-        return view('index', compact('comics'));
+        return view('home', compact('comics'));
     }
 }

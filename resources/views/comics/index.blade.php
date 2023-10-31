@@ -16,12 +16,11 @@
 </head>
 
 <body>
-    <a href="route{{users.index}}">clicca</a>
+
+    @include('layouts.partials.header')
 
     <main>
         <div class="container py-4">
-            <h1>Comics</h1>
-
             <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4">
                 @foreach ($comics as $comic)
                 <div class="col">
