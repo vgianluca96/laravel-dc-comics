@@ -18,4 +18,4 @@ use App\Http\Controllers\ComicsController;
 
 Route::get('/', [UserController::class, 'index'])->name('home');
 
-Route::resource('comics', ComicsController::class);
+Route::resource('index', ComicsController::class);
