@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guests\UserController as UserController;
+use App\Http\Controllers\ComicsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,5 @@ use App\Http\Controllers\Guests\UserController as UserController;
 
 
 Route::get('/', [UserController::class, 'index'])->name('home');
+
+Route::resource('comics', ComicsController::class);
