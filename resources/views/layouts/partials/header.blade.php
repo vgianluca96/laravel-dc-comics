@@ -11,13 +11,7 @@
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/comics">Comics</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/comics/show">Show</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                <a class="nav-link" href="{{route('comics.index')}}">Comics</a>
               </li>
             </ul>
             <form class="d-flex" role="search">
