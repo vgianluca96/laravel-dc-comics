@@ -38,7 +38,7 @@ class ComicsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('comics.show');
     }
 
     /**
