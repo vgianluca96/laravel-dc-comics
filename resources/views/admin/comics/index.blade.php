@@ -30,7 +30,7 @@
             <td>{{$comic->title}}</td>
             <td>{{$comic->series}}</td>
             <td>
-                <a href="{{route('comics.show',$comic->id)}}" class="btn btn-dark">
+                <a href="{{route('comics.show',$comic->id)}}" class="btn btn-dark me-1">
                     Details
                 </a>
             </td>
@@ -38,6 +38,12 @@
           @endforeach
         </tbody>
       </table>
+
+    <div class="py-4">
+        <a href="{{route('comics.create')}}" class="btn btn-dark me-1">
+            Add comic
+        </a>
+    </div>
 </div>
 
 @endsection
