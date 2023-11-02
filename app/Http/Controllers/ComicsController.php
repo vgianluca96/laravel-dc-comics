@@ -54,7 +54,7 @@ class ComicsController extends Controller
      */
     public function edit(Comic $comic)
     {
-        // return view('comics.edit', compact('comic'));
+        return view('admin.comics.edit', compact('comic'));
     }
 
     /**
@@ -62,8 +62,8 @@ class ComicsController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        // $comic->update($request->all());
-        // return to_route('comics.show', $comic);
+        $comic->update($request->all());
+        return to_route('comics.index');
     }
 
     /**
