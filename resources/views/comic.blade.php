@@ -2,7 +2,7 @@
 
 @section('header')
 
-@include('partials.admin_header')
+@include('partials.header')
 
 @endsection
 

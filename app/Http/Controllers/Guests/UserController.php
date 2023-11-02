@@ -13,4 +13,12 @@ class UserController extends Controller
         $comics = Comic::all();
         return view('home', compact('comics'));
     }
+
+    public function comics($id)
+    {
+
+        $comic = Comic::find($id);
+
+        return view('comic', compact('comic'));
+    }
 }

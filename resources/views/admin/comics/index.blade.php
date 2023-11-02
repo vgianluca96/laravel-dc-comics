@@ -1,25 +1,43 @@
 @extends('layouts.app')
 
+@section('header')
+
+@include('partials.admin_header')
+
+@endsection
+
 @section('main')
 
 <div class="container py-4">
-    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-4">
-        @foreach ($comics as $comic)
-        <div class="col">
-            <div class="card h-100">
-                <img src="{{$comic->thumb}}" alt="" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        {{$comic->title}}
-                    </h5>
-                    <p class="card-text">
-                        <a href="{{route('comics.show',$comic->id)}}">Details</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        @endforeach
+
+    <div class="py-2">
+        <h1>Admin dashboard</h1>
     </div>
+
+    <table class="table table-light table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Series</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            @foreach ($comics as $comic)
+          <tr>
+            <th scope="row">{{$comic->id}}</th>
+            <td>{{$comic->title}}</td>
+            <td>{{$comic->series}}</td>
+            <td>
+                <a href="{{route('comics.show',$comic->id)}}" class="btn btn-dark">
+                    Details
+                </a>
+            </td>
+          </tr>
+          @endforeach
+        </tbody>
+      </table>
 </div>
 
 @endsection
