@@ -30,7 +30,13 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        //dd($data);
+
+        Comic::create($data);
+
+        return to_route('comics.index');
     }
 
     /**

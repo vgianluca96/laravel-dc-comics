@@ -41,7 +41,7 @@
 
     <div class="py-4">
         <a href="{{route('comics.create')}}" class="btn btn-dark me-1">
-            Add comic
+            Add new comic
         </a>
     </div>
 </div>
