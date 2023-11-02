@@ -14,7 +14,7 @@ class ComicsController extends Controller
     {
         $comics = Comic::all();
 
-        return view('comics.index', compact('comics'));
+        return view('admin.comics.index', compact('comics'));
     }
 
     /**
@@ -22,7 +22,7 @@ class ComicsController extends Controller
      */
     public function create()
     {
-        //
+        // return view('comics.create');
     }
 
     /**
@@ -40,23 +40,24 @@ class ComicsController extends Controller
     {
         //$comic = Comic::find($id);
 
-        return view('comics.show', compact('comic'));
+        return view('admin.comics.show', compact('comic'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Comic $comic)
     {
-        //
+        // return view('comics.edit', compact('comic'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        // $comic->update($request->all());
+        // return to_route('comics.show', $comic);
     }
 
     /**

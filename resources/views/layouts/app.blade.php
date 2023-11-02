@@ -17,7 +17,7 @@
 
 <body>
 
-    @include('layouts.partials.header')
+    @include('partials.header')
 
     <main>
         @yield('main')
