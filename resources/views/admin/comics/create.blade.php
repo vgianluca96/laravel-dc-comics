@@ -48,6 +48,7 @@
         </div>
         <div class="col-12">
           <button type="submit" class="btn btn-primary">Create</button>
+          <a href="{{route('comics.index')}}" class="btn btn-light">Cancel</a>
         </div>
       </form>
 </div>
