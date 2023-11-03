@@ -10,8 +10,15 @@
 
 <div class="container py-4">
 
-    <div class="py-2">
-        <h1>Admin dashboard</h1>
+    <div class="d-flex justify-content-between py-4">
+        <div>
+          <h1>Admin dashboard</h1>
+        </div>
+        <div>
+          <a href="{{route('comics.create')}}" class="btn btn-dark me-1">
+            Add new comic
+          </a>
+        </div>
     </div>
 
     @if(session('message'))
@@ -76,11 +83,6 @@
         </tbody>
       </table>
 
-    <div class="py-4">
-        <a href="{{route('comics.create')}}" class="btn btn-dark me-1">
-            Add new comic
-        </a>
-    </div>
 </div>
 
 @endsection
