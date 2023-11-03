@@ -14,7 +14,7 @@
         <h1>Add new comic</h1>
     </div>
 
-    <form action="{{route('comics.store')}}" method="POST" class="row g-3">
+    <form action="{{route('comics.store')}}" method="POST" enctype="multipart/form-data" class="row g-3">
 
         @csrf
 
@@ -43,8 +43,8 @@
             <input type="text" class="form-control" id="comicDescription" name="description" placeholder="Lorem ipsum" value="Lorem Ipsum">
         </div>
         <div class="col-12">
-            <label for="comicSeries" class="form-label">Cover Image</label>
-            <input type="text" class="form-control" id="comicSeries" name="thumb" placeholder="https://picsum.photos/780/1200?random=1" value="https://picsum.photos/780/1200?random=1">
+          <label for="comicThumb" class="form-label">Cover Image</label>
+          <input type="file" class="form-control" id="comicThumb" name="thumb">
         </div>
         <div class="col-12">
           <button type="submit" class="btn btn-primary">Create</button>

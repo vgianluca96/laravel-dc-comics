@@ -15,7 +15,7 @@
           <h1>Admin dashboard</h1>
         </div>
         <div>
-          <a href="{{route('comics.create')}}" class="btn btn-dark me-1">
+          <a href="{{route('comics.create')}}" class="btn btn-primary me-1">
             Add new comic
           </a>
         </div>
@@ -44,7 +44,7 @@
             <td>{{$comic->title}}</td>
             <td>{{$comic->series}}</td>
             <td class="d-flex">
-                <a href="{{route('comics.show',$comic->id)}}" class="btn btn-dark me-1">
+                <a href="{{route('comics.show',$comic->id)}}" class="btn btn-secondary me-1">
                     Details
                 </a>
                 <a href="{{route('comics.edit',$comic->id)}}" class="btn btn-light me-1">

@@ -17,7 +17,11 @@
             @foreach ($comics as $comic)
             <div class="col">
                 <div class="card h-100">
-                    <img src="{{$comic->thumb}}" alt="" class="card-img-top">
+                    @if(str_contains($comic['thumb'],'http'))
+                        <img src="{{$comic->thumb}}" alt="" class="img-fluid rounded-start">
+                    @else
+                        <img src="{{asset('storage/' . $comic->thumb)}}" alt="" class="img-fluid rounded-start">
+                    @endif
                     <div class="card-body">
                         <h5 class="card-title">
                             {{$comic->title}}

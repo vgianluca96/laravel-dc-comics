@@ -12,7 +12,11 @@
     <div class="card">
         <div class="row g-0">
             <div class="col-md-4">
-                <img src="{{$comic->thumb}}" alt="" class="img-fluid rounded-start">
+                @if(str_contains($comic['thumb'],'http'))
+                    <img src="{{$comic->thumb}}" alt="" class="img-fluid rounded-start">
+                @else
+                    <img src="{{asset('storage/' . $comic->thumb)}}" alt="" class="img-fluid rounded-start">
+                @endif
             </div>
             <div class="col-md-8">
                 <div class="card-body">

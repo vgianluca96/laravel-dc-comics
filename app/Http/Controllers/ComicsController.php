@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comic;
+use Illuminate\Support\Facades\Storage;
 
 class ComicsController extends Controller
 {
@@ -32,6 +33,12 @@ class ComicsController extends Controller
     {
         $data = $request->all();
 
+        if ($request->has('thumb')) {
+            $file_path = Storage::put('comics_images', $request->thumb);
+            $data['thumb'] = $file_path;
+        }
+
+        //dd($file_path);
         //dd($data);
 
         Comic::create($data);
@@ -62,7 +69,19 @@ class ComicsController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        $comic->update($request->all());
+
+        $data = $request->all();
+
+        if ($request->has('thumb') && $comic->thumb) {
+            Storage::delete($comic->thumb);
+            $file_path = Storage::put('comics_images', $request->thumb);
+            $data['thumb'] = $file_path;
+        }
+
+        //dd($file_path);
+        //dd($data);
+
+        $comic->update($data);
         return to_route('comics.index')->with('message', 'Item successfully updated!');;
     }
 
@@ -71,6 +90,11 @@ class ComicsController extends Controller
      */
     public function destroy(Comic $comic)
     {
+
+        if (!is_null($comic->thumb)) {
+            Storage::delete($comic->thumb);
+        }
+
         $comic->delete();
         return to_route('comics.index')->with('message', 'Item successfully deleted!');
     }
