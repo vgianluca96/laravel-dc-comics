@@ -14,6 +14,13 @@
         <h1>Admin dashboard</h1>
     </div>
 
+    @if(session('message'))
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Congratulations:</strong> {{session('message')}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    @endif
+
     <table class="table table-light table-striped">
         <thead>
           <tr>
