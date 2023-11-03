@@ -29,13 +29,20 @@
             <th scope="row">{{$comic->id}}</th>
             <td>{{$comic->title}}</td>
             <td>{{$comic->series}}</td>
-            <td>
+            <td class="d-flex">
                 <a href="{{route('comics.show',$comic->id)}}" class="btn btn-dark me-1">
                     Details
                 </a>
                 <a href="{{route('comics.edit',$comic->id)}}" class="btn btn-light me-1">
                   Edit
-              </a>
+                </a>
+                <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="btn btn-danger">
+                    Delete
+                  </button>
+                </form>
             </td>
           </tr>
           @endforeach
