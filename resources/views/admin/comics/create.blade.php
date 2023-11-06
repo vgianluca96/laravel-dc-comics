@@ -84,7 +84,7 @@
         </div>
         <div class="col-12">
           <label for="comicThumb" class="form-label">Cover Image</label>
-          <input type="file" class="form-control @error('thumb') is-invalid @enderror" id="comicThumb" name="thumb" value="{{old('thumb')}}">
+          <input type="file" class="form-control @error('thumb') is-invalid @enderror" id="comicThumb" name="thumb">
           @error('thumb')
             <div class="text-danger">
               {{$message}}

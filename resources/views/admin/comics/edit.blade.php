@@ -14,6 +14,16 @@
         <h1>Update comic n. {{$comic->id}} ({{$comic->title}})</h1>
     </div>
 
+    @if ($errors->any())
+      <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+      </div>
+    @endif
+
     <form action="{{route('comics.update',$comic->id)}}" method="POST" enctype="multipart/form-data" class="row g-3">
 
         @csrf
@@ -21,31 +31,66 @@
         
         <div class="col-md-6">
           <label for="comicTitle" class="form-label">Title</label>
-          <input type="text" class="form-control" id="comicTitle" name="title" placeholder="Batman v Superman" value="{{$comic->title}}">
+          <input type="text" class="form-control @error('title') is-invalid @enderror" id="comicTitle" name="title" placeholder="Batman v Superman" value="{{old('title',$comic->title)}}">
+          @error('title')
+            <div class="text-danger">
+              {{$message}}
+            </div>
+          @enderror
         </div>
         <div class="col-md-6">
           <label for="comicPrice" class="form-label">Price</label>
-          <input type="text" class="form-control" id="comicPrice" name="price" placeholder="$29.99" value="{{$comic->price}}">
+          <input type="text" class="form-control @error('price') is-invalid @enderror" id="comicPrice" name="price" placeholder="$29.99" value="{{old('price',$comic->price)}}">
+          @error('price')
+            <div class="text-danger">
+              {{$message}}
+            </div>
+          @enderror
         </div>
         <div class="col-12">
             <label for="comicSeries" class="form-label">Series</label>
-            <input type="text" class="form-control" id="comicSeries" name="series" placeholder="Batman v Superman" value="{{$comic->series}}">
+            <input type="text" class="form-control @error('series') is-invalid @enderror" id="comicSeries" name="series" placeholder="Batman v Superman" value="{{old('series',$comic->series)}}">
+            @error('series')
+            <div class="text-danger">
+              {{$message}}
+            </div>
+          @enderror
         </div>
         <div class="col-12">
             <label for="comicSaleDate" class="form-label">Sale Date</label>
-            <input type="date" class="form-control" id="comicSaleDate" name="sale_date" value="{{$comic->sale_date}}">
+            <input type="date" class="form-control @error('sale_date') is-invalid @enderror" id="comicSaleDate" name="sale_date" value="{{old('sale_date',$comic->sale_date)}}">
+            @error('sale_date')
+            <div class="text-danger">
+              {{$message}}
+            </div>
+          @enderror
         </div>
         <div class="col-12">
             <label for="comicType" class="form-label">Type</label>
-            <input type="text" class="form-control" id="comicType" name="type" placeholder="comic book" value="{{$comic->type}}">
+            <input type="text" class="form-control @error('type') is-invalid @enderror" id="comicType" name="type" placeholder="comic book" value="{{old('type',$comic->type)}}">
+            @error('type')
+            <div class="text-danger">
+              {{$message}}
+            </div>
+          @enderror
         </div>
         <div class="col-12">
             <label for="comicDescription" class="form-label">Description</label>
-            <input type="text" class="form-control" id="comicDescription" name="description" placeholder="Lorem ipsum" value="{{$comic->description}}">
+            <input type="text" class="form-control @error('description') is-invalid @enderror" id="comicDescription" name="description" placeholder="Lorem ipsum" value="{{old('description',$comic->description)}}">
+            @error('description')
+            <div class="text-danger">
+              {{$message}}
+            </div>
+          @enderror
         </div>
         <div class="col-12">
           <label for="comicThumb" class="form-label">Cover Image</label>
-          <input type="file" class="form-control" id="comicThumb" name="thumb">
+          <input type="file" class="form-control @error('thumb') is-invalid @enderror" id="comicThumb" name="thumb">
+          @error('thumb')
+            <div class="text-danger">
+              {{$message}}
+            </div>
+          @enderror
         </div>
         <div class="col-12">
           <button type="submit" class="btn btn-primary">Update</button>

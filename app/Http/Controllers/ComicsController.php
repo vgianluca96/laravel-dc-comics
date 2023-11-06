@@ -80,6 +80,16 @@ class ComicsController extends Controller
     public function update(Request $request, Comic $comic)
     {
 
+        $request->validate([
+            'title' => 'required|max:100',
+            'description' => 'required|max:1000',
+            'thumb' => 'required',
+            'price' => 'required|max:10',
+            'series' => 'required|max:100',
+            'sale_date' => 'required',
+            'type' => 'required|max:100',
+        ]);
+
         $data = $request->all();
 
         if ($request->has('thumb') && $comic->thumb) {
