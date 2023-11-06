@@ -31,8 +31,7 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
-        /*
-        $validated = $request->validate([
+        $request->validate([
             'title' => 'required|max:100',
             'description' => 'required|max:1000',
             'thumb' => 'required',
@@ -41,8 +40,6 @@ class ComicsController extends Controller
             'sale_date' => 'required',
             'type' => 'required|max:100',
         ]);
-        
-        */
 
         $data = $request->all();
 
