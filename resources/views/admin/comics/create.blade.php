@@ -39,7 +39,7 @@
         </div>
         <div class="col-md-6">
           <label for="comicPrice" class="form-label">Price</label>
-          <input type="text" class="form-control @error('price') is-invalid @enderror" id="comicPrice" name="price" placeholder="$29.99" value="{{old('title')}}">
+          <input type="text" class="form-control @error('price') is-invalid @enderror" id="comicPrice" name="price" placeholder="$29.99" value="{{old('price')}}">
           @error('price')
             <div class="text-danger">
               {{$message}}
@@ -48,7 +48,7 @@
         </div>
         <div class="col-12">
             <label for="comicSeries" class="form-label">Series</label>
-            <input type="text" class="form-control @error('series') is-invalid @enderror" id="comicSeries" name="series" placeholder="Batman v Superman" value="{{old('title')}}">
+            <input type="text" class="form-control @error('series') is-invalid @enderror" id="comicSeries" name="series" placeholder="Batman v Superman" value="{{old('series')}}">
             @error('series')
             <div class="text-danger">
               {{$message}}
@@ -66,7 +66,7 @@
         </div>
         <div class="col-12">
             <label for="comicType" class="form-label">Type</label>
-            <input type="text" class="form-control @error('type') is-invalid @enderror" id="comicType" name="type" placeholder="comic book" value="{{old('title')}}">
+            <input type="text" class="form-control @error('type') is-invalid @enderror" id="comicType" name="type" placeholder="comic book" value="{{old('type')}}">
             @error('type')
             <div class="text-danger">
               {{$message}}
@@ -75,7 +75,7 @@
         </div>
         <div class="col-12">
             <label for="comicDescription" class="form-label">Description</label>
-            <input type="text" class="form-control @error('description') is-invalid @enderror" id="comicDescription" name="description" placeholder="Lorem ipsum" value="{{old('title')}}">
+            <input type="text" class="form-control @error('description') is-invalid @enderror" id="comicDescription" name="description" placeholder="Lorem ipsum" value="{{old('description')}}">
             @error('description')
             <div class="text-danger">
               {{$message}}
@@ -84,7 +84,7 @@
         </div>
         <div class="col-12">
           <label for="comicThumb" class="form-label">Cover Image</label>
-          <input type="file" class="form-control @error('thumb') is-invalid @enderror" id="comicThumb" name="thumb">
+          <input type="file" class="form-control @error('thumb') is-invalid @enderror" id="comicThumb" name="thumb" value="{{old('thumb')}}">
           @error('thumb')
             <div class="text-danger">
               {{$message}}
