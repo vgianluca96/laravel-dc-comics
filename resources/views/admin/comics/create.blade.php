@@ -30,7 +30,7 @@
 
         <div class="col-md-6">
           <label for="comicTitle" class="form-label">Title</label>
-          <input type="text" class="form-control @error('title') is-invalid @enderror" id="comicTitle" name="title" placeholder="Batman v Superman" value="Batman v Superman">
+          <input type="text" class="form-control @error('title') is-invalid @enderror" id="comicTitle" name="title" placeholder="Batman v Superman" value="{{old('title')}}">
           @error('title')
             <div class="text-danger">
               {{$message}}
@@ -39,7 +39,7 @@
         </div>
         <div class="col-md-6">
           <label for="comicPrice" class="form-label">Price</label>
-          <input type="text" class="form-control @error('price') is-invalid @enderror" id="comicPrice" name="price" placeholder="$29.99" value="$29.99">
+          <input type="text" class="form-control @error('price') is-invalid @enderror" id="comicPrice" name="price" placeholder="$29.99" value="{{old('title')}}">
           @error('price')
             <div class="text-danger">
               {{$message}}
@@ -48,7 +48,7 @@
         </div>
         <div class="col-12">
             <label for="comicSeries" class="form-label">Series</label>
-            <input type="text" class="form-control @error('series') is-invalid @enderror" id="comicSeries" name="series" placeholder="Batman v Superman" value="Batman v Superman">
+            <input type="text" class="form-control @error('series') is-invalid @enderror" id="comicSeries" name="series" placeholder="Batman v Superman" value="{{old('title')}}">
             @error('series')
             <div class="text-danger">
               {{$message}}
@@ -57,7 +57,7 @@
         </div>
         <div class="col-12">
             <label for="comicSaleDate" class="form-label">Sale Date</label>
-            <input type="date" class="form-control @error('sale_date') is-invalid @enderror" id="comicSaleDate" name="sale_date">
+            <input type="date" class="form-control @error('sale_date') is-invalid @enderror" id="comicSaleDate" name="sale_date" value="{{old('sale_date')}}">
             @error('sale_date')
             <div class="text-danger">
               {{$message}}
@@ -66,7 +66,7 @@
         </div>
         <div class="col-12">
             <label for="comicType" class="form-label">Type</label>
-            <input type="text" class="form-control @error('type') is-invalid @enderror" id="comicType" name="type" placeholder="comic book" value="comic book">
+            <input type="text" class="form-control @error('type') is-invalid @enderror" id="comicType" name="type" placeholder="comic book" value="{{old('title')}}">
             @error('type')
             <div class="text-danger">
               {{$message}}
@@ -75,7 +75,7 @@
         </div>
         <div class="col-12">
             <label for="comicDescription" class="form-label">Description</label>
-            <input type="text" class="form-control @error('description') is-invalid @enderror" id="comicDescription" name="description" placeholder="Lorem ipsum" value="Lorem Ipsum">
+            <input type="text" class="form-control @error('description') is-invalid @enderror" id="comicDescription" name="description" placeholder="Lorem ipsum" value="{{old('title')}}">
             @error('description')
             <div class="text-danger">
               {{$message}}
